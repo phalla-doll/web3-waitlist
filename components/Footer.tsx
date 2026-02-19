@@ -21,14 +21,14 @@ const Footer: React.FC<FooterProps> = ({ isVisible, formRef }) => {
               <p className="text-sm text-white/60">Receive updates, early access details, and exclusive insights.</p>
             </div>
             
-            <form className="flex flex-col sm:flex-row gap-3" onSubmit={(e) => e.preventDefault()}>
+            <form className="flex flex-col sm:flex-row gap-3 items-center" onSubmit={(e) => e.preventDefault()}>
               <input 
                 type="email" 
                 placeholder="name@example.com" 
-                className="flex-1 h-[42px] px-5 rounded-full bg-white/5 border border-white/10 text-white text-sm placeholder:text-white/30 focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all"
+                className="w-full sm:flex-1 h-[37px] px-5 rounded-full bg-white/5 border border-white/10 text-white text-sm placeholder:text-white/30 focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all"
                 required
               />
-              <div className="flex-shrink-0 flex justify-center">
+              <div className="flex-shrink-0 flex justify-center w-full sm:w-auto">
                 <GlowButton text="Subscribe" variant="light" type="submit" />
               </div>
             </form>
