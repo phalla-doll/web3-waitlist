@@ -1,20 +1,32 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Web3 Hero Section
 
-# Run and deploy your AI Studio app
+A high-fidelity, dark-themed landing page hero section designed for Web3 projects, featuring cinematic video backgrounds and modern glassmorphism effects.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/19a68BnqfODoRJhBLOUjEWAjD1zvSQGBv
+- **Cinematic Experience**: Full-screen video background with overlay for text readability.
+- **Modern Typography**: Uses "General Sans" from Fontshare for a clean, contemporary look.
+- **Glassmorphism**: Subtle transparency and blur effects on UI elements.
+- **Custom UI Components**: Bespoke "Glow Buttons" with gradient borders and lighting effects.
+- **Responsive Design**: Fully responsive navigation and layout for all device sizes.
+- **Animations**: Smooth fade-in entrance animations for content.
 
-## Run Locally
+## Technologies Used
 
-**Prerequisites:**  Node.js
+- **React**: Component-based UI architecture.
+- **Tailwind CSS**: Utility-first styling for rapid development and custom designs.
+- **Lucide React**: Modern, lightweight icons.
 
+## File Structure
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- `index.html`: Main entry point, includes Tailwind CDN and font imports.
+- `index.tsx`: React application entry point.
+- `App.tsx`: Main layout component handling the video background.
+- `components/`:
+  - `Navbar.tsx`: Responsive top navigation bar.
+  - `Hero.tsx`: Main hero content with call-to-action.
+  - `GlowButton.tsx`: Reusable button component with custom glow styles.
+
+## Usage
+
+This project is built using standard React patterns without a build step in this specific environment (using ES modules via `index.html`). To use in a standard create-react-app or Vite project, ensure Tailwind CSS is configured.
