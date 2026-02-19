@@ -1,9 +1,13 @@
 import React from 'react';
 import GlowButton from './GlowButton';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onJoinClick?: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onJoinClick }) => {
   return (
-    <section className="flex-1 flex flex-col items-center w-full px-6 pt-[120px] md:pt-[280px] pb-[102px]">
+    <section className="flex-1 flex flex-col items-center w-full px-6 pt-[120px] md:pt-[220px] pb-[60px]">
       <div className="flex flex-col items-center text-center max-w-[900px]">
         
         {/* Early Access Badge */}
@@ -29,7 +33,7 @@ const Hero: React.FC = () => {
 
         {/* CTA Button */}
         <div className="animate-fade-in-up delay-300">
-          <GlowButton text="Join Waitlist" variant="light" />
+          <GlowButton text="Join Waitlist" variant="light" onClick={onJoinClick} />
         </div>
 
       </div>

@@ -16,6 +16,15 @@
             colors: {
               'white-10': 'rgba(255, 255, 255, 0.1)',
               'white-20': 'rgba(255, 255, 255, 0.2)',
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
             }
           },
         },

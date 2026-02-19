@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  const handleJoinClick = () => {
+    setIsFormVisible(true);
+    // Add a small delay to ensure the element is rendered before scrolling
+    setTimeout(() => {
+      formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+  };
+
   return (
     <div className="relative w-full min-h-screen bg-black overflow-hidden font-sans text-white">
        {/* Background Video */}
@@ -23,8 +35,9 @@ const App: React.FC = () => {
 
       {/* Main Content Layer */}
       <div className="relative z-20 flex flex-col min-h-screen">
-        <Navbar />
-        <Hero />
+        <Navbar onJoinClick={handleJoinClick} />
+        <Hero onJoinClick={handleJoinClick} />
+        <Footer isVisible={isFormVisible} formRef={formRef} />
       </div>
     </div>
   );

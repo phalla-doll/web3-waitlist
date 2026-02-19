@@ -5,13 +5,15 @@ interface GlowButtonProps {
   variant?: 'dark' | 'light';
   onClick?: () => void;
   className?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
-const GlowButton: React.FC<GlowButtonProps> = ({ text, variant = 'dark', onClick, className = '' }) => {
+const GlowButton: React.FC<GlowButtonProps> = ({ text, variant = 'dark', onClick, className = '', type = 'button' }) => {
   const isDark = variant === 'dark';
 
   return (
     <button
+      type={type}
       onClick={onClick}
       className={`group relative rounded-full p-[0.6px] transition-transform active:scale-95 ${className}`}
       style={{

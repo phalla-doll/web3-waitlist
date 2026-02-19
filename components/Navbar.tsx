@@ -2,7 +2,11 @@ import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import GlowButton from './GlowButton';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  onJoinClick?: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onJoinClick }) => {
   const navLinks = [
     { name: 'Get Started', href: '#' },
     { name: 'Developers', href: '#' },
@@ -36,12 +40,12 @@ const Navbar: React.FC = () => {
 
       {/* Right Side: CTA */}
       <div className="hidden md:block">
-        <GlowButton text="Join Waitlist" variant="dark" />
+        <GlowButton text="Join Waitlist" variant="dark" onClick={onJoinClick} />
       </div>
 
-      {/* Mobile Menu Icon (Placeholder for simplicity, as specific mobile menu behavior wasn't requested beyond responsive layout) */}
+      {/* Mobile Menu Icon (Placeholder for simplicity) */}
       <div className="md:hidden">
-         <GlowButton text="Join" variant="dark" />
+         <GlowButton text="Join" variant="dark" onClick={onJoinClick} />
       </div>
     </nav>
   );
